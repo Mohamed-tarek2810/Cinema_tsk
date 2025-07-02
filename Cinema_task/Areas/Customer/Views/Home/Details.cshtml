@@ -1,0 +1,47 @@
+﻿@model Movies
+
+<div class="card mb-4 shadow-lg border-0 rounded-4 overflow-hidden" style="max-width:1000px;">
+    <div class="row g-0">
+       @* movie pic             *@
+        <div class="col-md-4 bg-dark">
+            <img src="/images/movies/@Model.ImgUrl"
+                 class="img-fluid h-100 object-fit-cover rounded-start"
+                 alt="Movie image" style="min-height: 100%;" />
+        </div>
+
+        @* Details *@
+        <div class="col-md-8 bg-light">
+            <div class="card-body p-4">
+                <h3 class="card-title mb-3 text-primary fw-bold">@Model.Name</h3>
+                <p class="card-text text-muted">@Model.Description</p>
+
+                <p class="mb-1"><strong>Category:</strong> <span class="text-dark">@Model.Category.Name</span></p>
+                <p class="mb-3"><strong>Cinema:</strong> <span class="text-dark">@Model.Cinema.Name</span></p>
+
+                <h6 class="fw-bold mt-4 mb-2">Cast:</h6>
+                <div class="d-flex flex-wrap gap-2">
+                    @foreach (var item in Model.ActorMovies) 
+                    { 
+                        <img src="/images/cast/@item.Actors.ProfilePicture" 
+                             class="rounded-circle shadow" 
+                             style="height: 60px; width: 60px; object-fit: cover;" 
+                             /> 
+                    } 
+
+        @* trailer *@
+                    <video controls width="400" height="200" autoplay  poster="/images/movies/@Model.ImgUrl">
+
+                        <source src="@Model.TrailerUrl" type="video/mp4">
+                        <track src="" kind="" srclang="" label="">
+                    </video>
+        <div class="trailer">
+
+
+        </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
