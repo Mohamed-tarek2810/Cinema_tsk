@@ -17,27 +17,9 @@
             <tr>
                 <td style="padding: 10px; border: 1px solid #ddd; text-align: center;">@category.CategoriesId</td>
                 <td style="padding: 10px; border: 1px solid #ddd;">@category.Name</td>
-                <td style="padding: 10px; border: 1px solid #ddd;"><a href="Views/Home/@category.Name">Show Movies</a>
-                @* <td style="padding: 10px; border: 1px solid #ddd;"> *@
-                @*     @if (category.Movies != null && category.Movies.Any()) *@
-                @*     { *@
-                @*         <ul> *@
-                @*             @for (int j = 0; j < category.Movies.Count; j++) *@
-                @*             { *@
-                @*                 var movie = category.Movies[j]; *@
-                @*                 <li> *@
-                @*                     <a asp-controller="Movies" asp-action="Details" asp-route-id="@movie.MoviesId"> *@
-                @*                         @movie.Name ?? $"Movie #{movie.Id}" *@
-                @*                     </a> *@
-                @*                 </li> *@
-                @*             } *@
-                @*         </ul> *@
-                @*     } *@
-                @*     else *@
-                @*     { *@
-                @*         <span>No Movies</span> *@
-                @*     } *@
-                @* </td> *@
+                <td style="padding: 10px; border: 1px solid #ddd;">@category.</td>
+                <td style="padding: 10px; border: 1px solid #ddd;">@category.Name</td>
+                <td style="padding: 10px; border: 1px solid #ddd;">@category.Name</td>
             </tr>
         <td>
             <a asp-action="Edit" asp-route-id="@category.CategoriesId">Edit</a> |

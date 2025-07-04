@@ -1,0 +1,35 @@
+﻿@model List<Categories>
+<h2 style="font-size: 28px; margin-bottom: 20px; margin-top: 30px; margin-left: 30px;">
+    Category List
+</h2>
+<div class="mb-3" style="margin-left: 80%;">
+    <a asp-action="Create" class="btn btn-success">+ Create New Category</a>
+</div>
+
+<table style="width: 70%; border-collapse: collapse; margin: 20px auto; font-size: 18px;">
+    <thead>
+        <tr style="background-color: #f2f2f2;">
+            <th style="padding: 12px; border: 1px solid #ddd;">ID</th>
+            <th style="padding: 12px; border: 1px solid #ddd;">Name</th>
+            <th style="padding: 8px; border: 1px solid #ddd;">
+                Action
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var category in Model) 
+        { 
+            <tr> 
+                <td style="padding: 10px; border: 1px solid #ddd; text-align: center;">@category.CategoriesId</td> 
+                <td style="padding: 10px; border: 1px solid #ddd;">@category.Name</td>
+                <td style="text-align: center;">
+                    <a href="/categories/edit/@category.CategoriesId" class="btn btn-sm btn-warning mx-1">Edit</a>
+                    <a href="/categories/delete/@category.CategoriesId" class="btn btn-sm btn-danger mx-1">Delete</a>
+                </td>
+
+            </tr> 
+    
+        } 
+
+    </tbody>
+</table>
