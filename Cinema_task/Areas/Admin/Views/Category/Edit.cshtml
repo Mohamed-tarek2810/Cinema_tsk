@@ -1,0 +1,18 @@
+﻿@model Categories
+<body>
+    <div class="container mt-5">
+        <h2 style="font-size: 28px; margin-bottom: 20px; margin-top: 30px;">
+             Edit Category Name
+        </h2>
+
+        <form method="post">
+            <div class="mb-3"
+                <label for="Name" class="form-label">Edit category Name</label>
+                <input type="text" class="form-control" id="Name" name="Name" value="@Model.Name" />
+            </div>
+
+            <button type="submit" class="btn btn-primary">submit</button>
+            <a href="/Admin/Category" class="btn btn-secondary">Cancel</a>
+        </form>
+    </div>
+</body>
