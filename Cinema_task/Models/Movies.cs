@@ -12,7 +12,7 @@
         public DateTime EndDate { get; set; }
         public MovieStatus MovieStatus { get; set; }
         public int CinemaId { get; set; }
-        public Cinema Cinema { get; set; } = null!;
+        public Cinemas Cinema { get; set; } = null!;
         public int CategoryId { get; set; }
         public Categories Category { get; set; } = null!;
         public ICollection<ActorMovies> ActorMovies { get; set; } = new List<ActorMovies>();

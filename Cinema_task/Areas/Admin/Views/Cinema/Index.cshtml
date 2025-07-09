@@ -1,0 +1,39 @@
+﻿@model List<Cinemas>
+<h2 style="font-size: 28px; margin-bottom: 20px; margin-top: 30px; margin-left: 30px;">
+    Cinema List
+</h2>
+<div class="mb-3" style="margin-left: 80%;">
+    <a href="/Admin/Cinema/Index1" class="btn btn-success">+ Create New Cinema</a>
+</div>
+
+<table style="width: 70%; border-collapse: collapse; margin: 20px auto; font-size: 18px;">
+    <thead>
+        <tr style="background-color: #f2f2f2;">
+            <th style="padding: 12px; border: 1px solid #ddd;">ID</th>
+            <th style="padding: 12px; border: 1px solid #ddd;">Name</th>
+            <th style="padding: 12px; border: 1px solid #ddd;">Description</th>s
+            <th style="padding: 12px; border: 1px solid #ddd;">Address</th>
+            <th style="padding: 8px; border: 1px solid #ddd;">
+                Action
+            </th> 
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var Cinema in Model) 
+        { 
+            <tr> 
+                <td style="padding: 10px; border: 1px solid #ddd; text-align: center;">@Cinema.CinemaId</td> 
+                <td style="padding: 10px; border: 1px solid #ddd;">@Cinema.Name</td>
+                <td style="padding: 10px; border: 1px solid #ddd;">@Cinema.Description</td>
+                <td style="padding: 10px; border: 1px solid #ddd;">@Cinema.Address</td>
+                <td style="text-align: center;">
+                    <a href="/Admin/Cinema/Edit/@Cinema.CinemaId" class="btn btn-sm btn-warning mx-1">Edit</a>
+                    <a href="/Admin/Cinema/Delete/@Cinema.CinemaId" class="btn btn-sm btn-danger mx-1">Delete</a>
+                </td>
+
+            </tr> 
+    
+        } 
+
+    </tbody>
+</table>

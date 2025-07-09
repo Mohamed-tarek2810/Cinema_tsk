@@ -1,7 +1,10 @@
-﻿namespace Cinema_task.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace Cinema_task.Models
 {
-    public class Cinema
+    public class Cinemas
     {
+        [Key]
         public int CinemaId { get; set; }
         public string Name { get; set; } = string.Empty;
         public string? Description { get; set; }
